@@ -83,26 +83,6 @@ namespace ArduinoEstacionamiento.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Distancia_lejos {
-            get {
-                object obj = ResourceManager.GetObject("Distancia lejos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Distancia_lejos1 {
-            get {
-                object obj = ResourceManager.GetObject("Distancia lejos1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap farol {
             get {
                 object obj = ResourceManager.GetObject("farol", resourceCulture);
@@ -116,16 +96,6 @@ namespace ArduinoEstacionamiento.Properties {
         internal static System.Drawing.Bitmap farolgris {
             get {
                 object obj = ResourceManager.GetObject("farolgris", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap farolgris1 {
-            get {
-                object obj = ResourceManager.GetObject("farolgris1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,26 +126,6 @@ namespace ArduinoEstacionamiento.Properties {
         internal static System.Drawing.Bitmap fondo {
             get {
                 object obj = ResourceManager.GetObject("fondo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fondoedited {
-            get {
-                object obj = ResourceManager.GetObject("fondoedited", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Tablero {
-            get {
-                object obj = ResourceManager.GetObject("Tablero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

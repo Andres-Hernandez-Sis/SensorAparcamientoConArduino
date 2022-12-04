@@ -1,0 +1,169 @@
+//Se utilizo un arduino nano.
+#define LEDVERDE 12
+#define LEDAMARILLO 11
+#define LEDROJO 10
+#define TRIGGER 6
+#define ECHO 5
+#define BUZZER 4
+
+
+String inputString = ""; //una cadena que mantiene los datos entrantes.
+bool stringComplete = false; //ya sea que el string esta completo
+const float sonido = 34300.0; // Velocidad del sonido en cm/s
+
+
+void setup() 
+{
+    Serial.begin(9600);
+    pinMode(LEDVERDE, OUTPUT);
+    pinMode(LEDAMARILLO, OUTPUT);
+    pinMode(LEDROJO, OUTPUT);
+    pinMode(ECHO, INPUT);
+    pinMode(TRIGGER, OUTPUT);
+    pinMode(BUZZER, OUTPUT);
+    apagarLEDs();
+}
+ 
+
+void serialEvent() // Habilita la conexion con la interfaz.
+{
+    while (Serial.available())
+    {
+      // Get the new byte
+        char inChar = (char)Serial.read();
+        if  (inChar == '\n')
+        {
+            stringComplete = true;
+        }
+        else
+        {
+            inputString += inChar;
+        }
+    }
+}
+
+
+bool Radar = false;
+
+void loop() 
+{                    
+    if (stringComplete)
+    {
+      inputString.trim();
+      Serial.println(inputString);  // procesa el comando
+      if(inputString.equals("$On"))
+      {          
+        Radar = true;
+      }
+      else if(inputString.equals("$Off"))
+      {
+        Radar = false;
+      }  
+      inputString = " "; //Limpiamos el string
+      stringComplete = false;
+    }
+    
+    if(Radar)
+    {
+        iniciarTrigger();
+    }
+    else
+    {
+        apagarLEDs();
+    }
+
+}
+ 
+void apagarLEDs()
+{
+    digitalWrite(LEDVERDE, LOW);
+    digitalWrite(LEDAMARILLO, LOW);
+    digitalWrite(LEDROJO, LOW);
+}
+ 
+void alerta(float distancia)
+{
+    if (distancia <= 100.00 && distancia > 50.00)
+    {
+      digitalWrite(LEDVERDE, HIGH);
+      digitalWrite(LEDROJO, LOW);
+      digitalWrite(LEDAMARILLO, LOW);
+      tone(BUZZER, 2000, 200);
+ 
+      digitalWrite(BUZZER, HIGH);
+      delay(600);
+      digitalWrite(BUZZER, LOW);
+      delay(600);
+      
+    }
+    if (distancia <= 50.00 && distancia > 30.00)
+    {   
+      digitalWrite(LEDAMARILLO, HIGH);
+      digitalWrite(LEDVERDE, LOW);
+      digitalWrite(LEDROJO, LOW);
+      tone(BUZZER, 2500, 200);
+      digitalWrite(BUZZER, HIGH);
+      delay(400);
+      digitalWrite(BUZZER, LOW);
+      delay(400);
+
+    }
+    if (distancia <= 30.00 && distancia > 20.00)
+    {   
+      digitalWrite(LEDAMARILLO, HIGH);
+      digitalWrite(LEDVERDE, LOW);
+      digitalWrite(LEDROJO, LOW);
+      tone(BUZZER, 3000, 200);
+      digitalWrite(BUZZER, HIGH);
+      delay(200);
+      digitalWrite(BUZZER, LOW);
+      delay(200);
+    }
+    if (distancia <= 20.00 && distancia > 10.00)
+    {   
+      digitalWrite(LEDROJO, HIGH);
+      digitalWrite(LEDVERDE, LOW);
+      digitalWrite(LEDAMARILLO, LOW);
+      tone(BUZZER, 3500, 200);
+      digitalWrite(BUZZER, HIGH);
+      delay(50);
+      digitalWrite(BUZZER, LOW);
+      delay(50);
+    }
+    if (distancia <= 10.00)
+    {
+      digitalWrite(LEDROJO, HIGH);
+      digitalWrite(LEDVERDE, LOW);
+      digitalWrite(LEDAMARILLO, LOW);
+      tone(BUZZER, 4000);
+    }
+}
+
+float calcularDistancia()
+{
+    unsigned long tiempo = pulseIn(ECHO, HIGH); // La función pulseIn obtiene el tiempo que tarda en cambiar entre estados, en este caso a HIGH
+    float distancia = tiempo * 0.000001 * sonido / 2.0;// Obtenemos la distancia en cm, hay que convertir el tiempo en segundos ya que está en microsegundos,por eso se multiplica por 0.000001
+    String cad= "La distancia es: ";
+    String cad2 =" cm";
+    //Serial.println(cad + distancia + cad2); //Por si queremos imprimir una cadena con mensaje.
+    Serial.println(distancia);
+    delay(500);
+    return distancia;
+}
+ 
+void iniciarTrigger()
+{       
+    // Ponemos el Trigger en estado bajo y esperamos 2 ms
+    digitalWrite(TRIGGER, LOW);
+    delayMicroseconds(2);
+  
+    // Ponemos el pin Trigger a estado alto y esperamos 10 ms
+    digitalWrite(TRIGGER, HIGH);
+    delayMicroseconds(10);
+  
+    // Comenzamos poniendo el pin Trigger en estado bajo
+    digitalWrite(TRIGGER, LOW);
+
+    float distancia = calcularDistancia();
+    alerta(distancia);
+}

@@ -127,31 +127,16 @@
   <data name="farol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\farol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tablero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tablero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="farolgris" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\farolgris.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Distancia lejos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Distancia lejos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="car2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Distancia lejos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Distancia lejos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="car1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="farolgris1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\farolgris1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fondoedited" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondoedited.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
