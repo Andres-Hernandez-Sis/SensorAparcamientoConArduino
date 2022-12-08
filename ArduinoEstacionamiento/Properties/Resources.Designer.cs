@@ -83,6 +83,16 @@ namespace ArduinoEstacionamiento.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Choque {
+            get {
+                object obj = ResourceManager.GetObject("Choque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap farol {
             get {
                 object obj = ResourceManager.GetObject("farol", resourceCulture);

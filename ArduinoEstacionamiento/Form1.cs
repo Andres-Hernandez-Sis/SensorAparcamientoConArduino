@@ -31,9 +31,7 @@ namespace ArduinoEstacionamiento
             {
                 MessageBox.Show("Error" + error);
             }
-
-            
-
+            picChoque.Visible = false;
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -107,6 +105,7 @@ namespace ArduinoEstacionamiento
                         {
                             lblMedida.Text = "0";
                             lblMedida.ForeColor = Color.Black;
+                            picChoque.Visible = false;
                         }
                         else
                         {
@@ -115,30 +114,65 @@ namespace ArduinoEstacionamiento
                                 lblMedida.BackColor = Color.PowderBlue;
                                 picLED.Image = Properties.Resources.farolverde;
                                 lblMedida.ForeColor = Color.Green;
+                                picChoque.Visible = false;
+                                int x = picAutoR.Location.X;
+                                int y = picAutoR.Location.Y;
+                                x = -3;
+                                Point punto = new Point(x, y);
+                                picAutoR.Location = punto;
                             }
                             if (double.Parse(lblMedida.Text) <= 50.00 && double.Parse(lblMedida.Text) > 30.00)
                             {
                                 picLED.Image = Properties.Resources.farol;
                                 lblMedida.BackColor = Color.CadetBlue;
                                 lblMedida.ForeColor = Color.Yellow;
+                                picChoque.Visible = false;
+                                int x = picAutoR.Location.X;
+                                int y = picAutoR.Location.Y;
+                                x = 10;
+                                Point punto = new Point(x, y);
+                                picAutoR.Location = punto;
                             }
                             if (double.Parse(lblMedida.Text) <= 30.00 && double.Parse(lblMedida.Text) > 20.00)
                             {
                                 lblMedida.BackColor = Color.CadetBlue;
                                 picLED.Image = Properties.Resources.farol;
                                 lblMedida.ForeColor = Color.Yellow;
+                                picChoque.Visible = false;
+                                int x = picAutoR.Location.X;
+                                int y = picAutoR.Location.Y;
+                                x = 20;
+                                Point punto = new Point(x, y);
+                                picAutoR.Location = punto;
                             }
                             if (double.Parse(lblMedida.Text) <= 20.00 && double.Parse(lblMedida.Text) > 10.00)
                             {
                                 lblMedida.BackColor = Color.PowderBlue;
                                 picLED.Image = Properties.Resources.farolrojo;
                                 lblMedida.ForeColor = Color.Red;
+                                picChoque.Visible = false;
+                                int x = picAutoR.Location.X;
+                                int y = picAutoR.Location.Y;
+                                x = 40;
+                                Point punto = new Point(x, y);
+                                picAutoR.Location = punto;
+                                
                             }
                             if (double.Parse(lblMedida.Text) <= 10.00)
                             {
                                 lblMedida.BackColor = Color.PowderBlue;
                                 picLED.Image = Properties.Resources.farolrojo;
                                 lblMedida.ForeColor = Color.Red;
+                                picChoque.Visible = false;
+                                int x = picAutoR.Location.X;
+                                int y = picAutoR.Location.Y;
+                                x = 66;
+                                Point punto = new Point(x, y);
+                                picAutoR.Location = punto;
+                            }
+                            if (double.Parse(lblMedida.Text) <= 3.00)
+                            {
+                                picChoque.Visible = true;
                             }
                         }
                     }
@@ -150,6 +184,7 @@ namespace ArduinoEstacionamiento
 
         private void tmrMov_Tick(object sender, EventArgs e)
         {
+            /* Por si queremos una animacion simple
             int x = picAutoR.Location.X;
             int y = picAutoR.Location.Y;
             if (x < 77)//77
@@ -163,7 +198,7 @@ namespace ArduinoEstacionamiento
             }         
             Point punto = new Point(x, y);
             picAutoR.Location = punto;
-
+            */
         }
 
     }

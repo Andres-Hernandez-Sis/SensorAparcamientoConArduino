@@ -90,7 +90,9 @@
     <None Include="Resources\fondo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Codigo del Arduino.txt" />
+    <Content Include="Resources\Choque.png" />
+    <Content Include="Resources\CodigoArduino.txt" />
+    <None Include="Resources\Choque1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

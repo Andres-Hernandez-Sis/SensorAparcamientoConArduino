@@ -42,10 +42,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.picLED = new System.Windows.Forms.PictureBox();
+            this.picChoque = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAutoR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLED)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChoque)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMedida
@@ -121,7 +123,7 @@
             // 
             this.picAutoR.BackColor = System.Drawing.Color.Transparent;
             this.picAutoR.Image = ((System.Drawing.Image)(resources.GetObject("picAutoR.Image")));
-            this.picAutoR.Location = new System.Drawing.Point(0, 216);
+            this.picAutoR.Location = new System.Drawing.Point(-3, 216);
             this.picAutoR.Name = "picAutoR";
             this.picAutoR.Size = new System.Drawing.Size(425, 188);
             this.picAutoR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,28 +161,40 @@
             // 
             this.picLED.BackColor = System.Drawing.Color.Transparent;
             this.picLED.Image = global::ArduinoEstacionamiento.Properties.Resources.farolgris;
-            this.picLED.Location = new System.Drawing.Point(638, 85);
+            this.picLED.Location = new System.Drawing.Point(620, 85);
             this.picLED.Name = "picLED";
             this.picLED.Size = new System.Drawing.Size(69, 55);
             this.picLED.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picLED.TabIndex = 11;
             this.picLED.TabStop = false;
             // 
+            // picChoque
+            // 
+            this.picChoque.BackColor = System.Drawing.Color.Transparent;
+            this.picChoque.Image = global::ArduinoEstacionamiento.Properties.Resources.Choque;
+            this.picChoque.Location = new System.Drawing.Point(454, 271);
+            this.picChoque.Name = "picChoque";
+            this.picChoque.Size = new System.Drawing.Size(93, 100);
+            this.picChoque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picChoque.TabIndex = 12;
+            this.picChoque.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ArduinoEstacionamiento.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(940, 436);
+            this.ClientSize = new System.Drawing.Size(940, 468);
             this.Controls.Add(this.picLED);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picAutoR);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblMedida);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picChoque);
             this.Name = "Form1";
-            this.Text = "Estacionamiento con medidor de distancia";
+            this.Text = "Sistema de Aparcamiento con medidor de distancia.";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -188,6 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAutoR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLED)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChoque)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,6 +220,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox picLED;
+        private System.Windows.Forms.PictureBox picChoque;
     }
 }
 

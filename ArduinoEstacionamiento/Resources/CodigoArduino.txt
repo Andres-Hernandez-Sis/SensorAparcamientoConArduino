@@ -1,4 +1,3 @@
-//Se utilizo un arduino nano.
 #define LEDVERDE 12
 #define LEDAMARILLO 11
 #define LEDROJO 10
@@ -43,7 +42,7 @@ void serialEvent() // Habilita la conexion con la interfaz.
 }
 
 
-bool Radar = false;
+bool Bandera = false;
 
 void loop() 
 {                    
@@ -53,17 +52,17 @@ void loop()
       Serial.println(inputString);  // procesa el comando
       if(inputString.equals("$On"))
       {          
-        Radar = true;
+        Bandera = true;
       }
       else if(inputString.equals("$Off"))
       {
-        Radar = false;
+        Bandera = false;
       }  
       inputString = " "; //Limpiamos el string
       stringComplete = false;
     }
     
-    if(Radar)
+    if(Bandera)
     {
         iniciarTrigger();
     }
@@ -101,7 +100,7 @@ void alerta(float distancia)
       digitalWrite(LEDAMARILLO, HIGH);
       digitalWrite(LEDVERDE, LOW);
       digitalWrite(LEDROJO, LOW);
-      tone(BUZZER, 2500, 200);
+      tone(BUZZER, 2000, 200);
       digitalWrite(BUZZER, HIGH);
       delay(400);
       digitalWrite(BUZZER, LOW);
@@ -113,7 +112,7 @@ void alerta(float distancia)
       digitalWrite(LEDAMARILLO, HIGH);
       digitalWrite(LEDVERDE, LOW);
       digitalWrite(LEDROJO, LOW);
-      tone(BUZZER, 3000, 200);
+      tone(BUZZER, 2000, 200);
       digitalWrite(BUZZER, HIGH);
       delay(200);
       digitalWrite(BUZZER, LOW);
@@ -124,7 +123,7 @@ void alerta(float distancia)
       digitalWrite(LEDROJO, HIGH);
       digitalWrite(LEDVERDE, LOW);
       digitalWrite(LEDAMARILLO, LOW);
-      tone(BUZZER, 3500, 200);
+      tone(BUZZER, 2000, 200);
       digitalWrite(BUZZER, HIGH);
       delay(50);
       digitalWrite(BUZZER, LOW);
@@ -135,7 +134,7 @@ void alerta(float distancia)
       digitalWrite(LEDROJO, HIGH);
       digitalWrite(LEDVERDE, LOW);
       digitalWrite(LEDAMARILLO, LOW);
-      tone(BUZZER, 4000);
+      tone(BUZZER, 2000);
     }
 }
 
@@ -167,3 +166,5 @@ void iniciarTrigger()
     float distancia = calcularDistancia();
     alerta(distancia);
 }
+
+
